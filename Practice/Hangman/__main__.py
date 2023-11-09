@@ -23,7 +23,7 @@ while game == True:
         print(f'Похоже, что вы отгадали все слова! \n0_0\nСтолько очков вам удалось набрать: {score}')
         break
     print(f'Загаданное слово состоит из {len(word)} букв')
-    answer = '*'*len(word)
+    answer = '\u25a0'*len(word)
     while lives != 0 and answer != word:
         print('\n\n'+answer)
         guess = re.sub("[^А-я]", "", (input('Введите одну букву или слово целиком: ')))
