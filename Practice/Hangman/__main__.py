@@ -37,8 +37,8 @@ while game == True:
                 lives -= 1
                 print(f'К сожалению, такой буквы в слове нет!\n\nЕще осталось {lives} жизней')
             elif guess not in word and len(guess) != 1:
-                lives -= 1
-                print(f'К сожалению, загадано не это слово!\n\nЕще осталось {lives} жизней')
+                lives == 0
+                print(f'К сожалению, загадано не это слово!\n\n')
             elif guess == word:
                 print(f'Вы угадали слово {word} целиком!\n У вас было в запасе еще столько жизней: {lives}')
                 answer = guess
