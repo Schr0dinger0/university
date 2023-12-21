@@ -1,0 +1,930 @@
+Исходное слово | Перевод | Количество повторений
+я | I | 153
+не | Not | 115
+в | V | 100
+на | on | 88
+а | A | 84
+ты | You | 71
+у | u | 62
+что | What | 51
+к | To | 50
+и | And | 48
+быть | be | 47
+это | This | 43
+дима | Dima | 42
+петров | Petrov | 40
+ну | Well | 40
+с | With | 37
+но | But | 34
+если | If | 31
+сейчас | Now | 29
+андрей | Andrey | 29
+есипов | Esipov | 29
+там | there | 28
+мочь | To be able | 27
+да | Yes | 26
+тип | type | 26
+как | How | 24
+сколько | How many | 23
+за | behind | 22
+то | That | 21
+надо | necessary | 21
+всё | All | 20
+есть | There is | 20
+же | the same | 19
+комп | Comp | 19
+так | So | 18
+ред | Ed | 18
+бп | BP | 17
+он | He | 17
+до | before | 16
+просто | Just | 16
+карта | map | 16
+играть | play | 15
+завтра | Tomorrow | 14
+этот | this | 14
+по | By | 14
+или | or | 13
+стоить | cost | 13
+думать | think | 12
+ti | You | 12
+хороший | good | 12
+мой | my | 12
+пока | Bye | 12
+бы | would | 11
+пойти | Go | 11
+новый | new | 11
+деньга | Money | 11
+отдать | Give | 11
+тогда | Then | 10
+говорить | speak | 10
+такой | such | 10
+хотеть | want | 10
+она | she | 10
+приехать | come | 10
+норма | norm | 10
+вот | Here | 10
+сын | son | 10
+сказать | say | 9
+мб | MB | 9
+весь | All | 9
+себя | myself | 9
+прям | Straight | 9
+воскресение | Sunday | 9
+знать | know | 9
+какой | Which | 9
+послать | send | 9
+го | go | 9
+оно | it | 8
+кс | Ks | 8
+фпс | FPS | 8
+ещё | more | 8
+хз | xs | 8
+корпус | frame | 8
+уже | already | 8
+купить | buy | 8
+чтобы | to | 8
+взять | take | 8
+чем | how | 8
+друг | Friend | 8
+можно | Can | 8
+дс | DS | 8
+тысяча | thousand | 7
+тот | That | 7
+ли | Lee | 7
+ток | current | 7
+наверна | Probably | 7
+пон | Pon | 7
+один | one | 7
+тут | here | 7
+только | only | 7
+ещ | still | 7
+ладный | okay | 7
+куда | Where | 7
+станция | station | 7
+чуть | A little | 7
+проц | percent | 7
+скидка | discount | 7
+раста | Rasta | 7
+цена | price | 6
+теперь | Now | 6
+посмотреть | look | 6
+о | O | 6
+раз | once | 6
+авить | Avito | 6
+кст | Kst | 6
+должный | due | 6
+москва | Moscow | 6
+нет | No | 6
+остальной | The rest | 6
+давать | give | 6
+час | hour | 6
+они | They | 6
+ждать | wait | 6
+где | Where | 6
+даже | even | 6
+элка | Elka | 6
+плохой | bad | 6
+поздний | late | 6
+игра | a game | 6
+кристаликс | Crystallus | 6
+продать | sell | 5
+свой | mine | 5
+р | R | 5
+спать | sleep | 5
+ока | Oka | 5
+когда | When | 5
+твой | is yours | 5
+получаться | work out | 5
+видяха | Vidyakha | 5
+забрать | take | 5
+который | which | 5
+видюхий | Vidyuhiy | 5
+сам | myself | 5
+смочь | San | 5
+от | from | 5
+общага | The dormitory | 5
+чел | people | 5
+супер | super | 5
+фабричный | factory | 5
+пара | pair | 5
+далее | Further | 5
+без | without | 5
+делать | do | 5
+стать | become | 5
+вроде | like | 5
+тянуть | to pull | 5
+майный | Main | 5
+покушать | to eat | 5
+ддр | DDR | 5
+оставить | leave | 5
+через | through | 4
+помнить | remember | 4
+маленький | small | 4
+будэ | Budae | 4
+изображение | image | 4
+дом | house | 4
+пересечься | cross | 4
+стоять | stand | 4
+яндекс | Yandex | 4
+старый | old | 4
+греться | bask | 4
+работать | work | 4
+брать | take | 4
+нету | There is not | 4
+около | near | 4
+день | day | 4
+бесплатно | for free | 4
+ватт | watt | 4
+надеяться | hope | 4
+тоже | Same | 4
+сбер | Sber | 4
+налик | Nalik | 4
+ага | Yeah | 4
+ранний | early | 4
+работа | Job | 4
+мало | few | 4
+вернуть | return | 4
+проходить | pass | 4
+бенчмарк | Benchmark | 4
+хотя | Although | 4
+лаг | lag | 4
+про | pro | 4
+сервак | Servak | 4
+дот | Dot | 4
+маина | Maine | 4
+грать | play | 4
+потом | Then | 4
+комплект | set | 4
+неделя | a week | 3
+обещать | promise | 3
+сообщение | message | 3
+сила | force | 3
+конечно | Certainly | 3
+простой | simple | 3
+учёба | studies | 3
+видео | video | 3
+свободный | free | 3
+остаться | stay | 3
+писать | write | 3
+дешёвый | cheap | 3
+скорее | quicker | 3
+менять | change | 3
+при | at | 3
+луч | Ray | 3
+видюха | Vidyuha | 3
+хватить | Enough | 3
+кинуть | throw | 3
+смотреть | look | 3
+роль | role | 3
+чтоть | cash | 3
+либо | or | 3
+скачать | download | 3
+выглядеть | to look like | 3
+штука | thing | 3
+правда | Truth | 3
+год | year | 3
+понять | understand | 3
+любой | any | 3
+удобный | comfortable | 3
+рубль | ruble | 3
+забить | Score | 3
+вертушка | Turnie | 3
+чёкнуть | piss | 3
+наверное | Maybe | 3
+самый | most | 3
+близкий | close | 3
+перевести | translate | 3
+средний | average | 3
+крутой | steep | 3
+щя | Shchi | 3
+бро | Br. | 3
+комната | room | 3
+утро | morning | 3
+вообще | at all | 3
+момент | moment | 3
+время | time | 3
+минута | minute | 3
+справляться | Cope | 3
+кент | Kent | 3
+мать | mother | 3
+поставить | put | 3
+эншента | Enchenta | 3
+макс | Max | 3
+память | memory | 3
+точно | Exactly | 3
+ваш | your | 3
+че | Che | 3
+написать | Write | 3
+картинка | picture | 3
+зато | but | 3
+арма | Arma | 3
+кто | Who | 3
+армия | army | 3
+танк | tank | 3
+дискордик | Discord | 3
+щебень | Crushed stone | 3
+сегодня | Today | 3
+кроватка | Cotle | 3
+проснуться | wake up | 3
+покер | poker | 3
+круто | Cool | 3
+блин | Crap | 3
+придумать | come up with | 3
+вернуться | return | 3
+туда | there | 3
+два | two | 3
+плата | pay | 3
+выкидывать | throw it out | 3
+штаны | trousers | 3
+найти | find | 2
+нормик | norm | 2
+искать | search | 2
+шарить | fumble | 2
+открыть | open | 2
+ни | Neither | 2
+щииище | Schiyesche | 2
+предлагать | suggest | 2
+выше | higher | 2
+жесть | tin | 2
+киберпанк | Cyberpank | 2
+модульный | modular | 2
+сертификат | certificate | 2
+спокойно | calmly | 2
+материнка | motherboard | 2
+богатый | rich | 2
+вывозить | Exit | 2
+появятсяк | appear | 2
+сидеть | sit | 2
+курица | chicken | 2
+второй | second | 2
+витаминк | Vitamink | 2
+последний | last | 2
+красиво | Beautiful | 2
+всякий | any | 2
+менее | less | 2
+считать | count | 2
+идти | go | 2
+хорошо | Fine | 2
+комлект | set | 2
+ахахахха | Ahahahha | 2
+дело | case | 2
+покупать | buy | 2
+минимум | minimum | 2
+сделать | do | 2
+покупка | purchase | 2
+крч | CRC | 2
+подъехать | drive up | 2
+дать | give | 2
+банкомат | ATM | 2
+вуз | university | 2
+деняк | Denyak | 2
+тинька | Tinka | 2
+комиссия | commission | 2
+зайти | Come in | 2
+шик | chic | 2
+фотография | photo | 2
+кресло | armchair | 2
+дорого | expensive | 2
+оказываться | come to | 2
+поздно | late | 2
+путь | path | 2
+родок | GOODS | 2
+объяснить | explain | 2
+вариант | option | 2
+подъезжать | drive up | 2
+выходить | go out | 2
+англ | English | 2
+сторона | side | 2
+щиииище | Shiria | 2
+обязательно | Necessarily | 2
+большой | big | 2
+кидать | throw | 2
+колесо | wheel | 2
+присобачить | Subtract | 2
+бу | boo | 2
+подсветка | backlight | 2
+главное | The main thing | 2
+чинить | repair | 2
+компьютер | computer | 2
+включиться | turn on | 2
+отдавать | give away | 2
+попросить | Ask | 2
+проверить | check | 2
+кстати | By the way | 2
+для | For | 2
+ёбаный | fucking | 2
+попробовать | Try | 2
+настройка | Settings | 2
+ничего | Nothing | 2
+относительно | relatively | 2
+соотношение | ratio | 2
+появиться | to appear | 2
+бб | BB | 2
+совсем | at all | 2
+рюкзак | backpack | 2
+магазин | shop | 2
+обратно | back | 2
+элкаавтобус | Elkavtobus | 2
+мы | We | 2
+первый | first | 2
+спасибо | Thank you | 2
+вк | VC | 2
+слепой | blind | 2
+убийство | murder | 2
+гранат | pomegranate | 2
+позор | a shame | 2
+кнч | Knch | 2
+фэпэсэ | FEPESE | 2
+скоро | soon | 2
+пк | PC | 2
+ничося | nothing | 2
+штоть | strap | 2
+читыристый | cheaty | 2
+скидончик | Skidonchik | 2
+помахать | wave | 2
+ненадо | No need | 2
+оф | Of | 2
+каточек | Katka | 2
+щищ | shields | 2
+минекрафт | Minecraft | 2
+таки | the same | 2
+желейный | jelly | 2
+медведь | bear | 2
+валера | Valera | 2
+вар | Var | 2
+кристаликис | Crystallus | 2
+заходить | Go | 2
+провод | the wire | 2
+батя | Dad | 2
+хуесос | cocksucker | 2
+lf | lf | 2
+вчера | yesterday | 2
+случайно | accidentally | 2
+поиграть | Play | 2
+ломка | Brown | 2
+майнкрафтик | Minecraft | 2
+настолько | so | 2
+чтонибыть | what to | 2
+сушить | dry | 2
+хахахахах | Hahahah | 2
+сушилка | Dryer | 2
+проспать | Speak | 2
+телефон | telephone | 2
+много | a lot of | 2
+стол | table | 2
+процессор | CPU | 2
+кушать | eat | 2
+оператив | Operational | 2
+прохложданться | Cool | 2
+оперативка | RAM | 2
+чёрный | black | 2
+полтора | One and a half | 2
+наушник | earphone | 2
+монитор | monitor | 2
+хвастаться | boast | 1
+видеть | see | 1
+переслать | Send | 1
+сюда | here | 1
+колоквиум | colloquium | 1
+узкахахвхха | narrow | 1
+позавидовать | Entrance | 1
+ахахахахахах | Ahahahahah | 1
+чудо | miracle | 1
+сосочка | Papilla | 1
+ждт | GIDT | 1
+решение | solution | 1
+заглушка | plug | 1
+также | Also | 1
+пломба | seal | 1
+свидетельствовать | testify | 1
+вскрывать | open | 1
+гиг | gig | 1
+поискать | search | 1
+пж | PJ | 1
+тк | TC | 1
+включение | inclusion | 1
+погаснуть | Turn away | 1
+километровый | kilometer | 1
+еле | Barely | 1
+запихать | To cram | 1
+w | V | 1
+голдовыя | Goldovo | 1
+стекло | glass | 1
+белый | white | 1
+поместиться | Place | 1
+вырубиться | Been out | 1
+минус | minus | 1
+счёт | check | 1
+единственный | the only one | 1
+трабла | Trabla | 1
+бывать | to go | 1
+именно | exactly | 1
+сен | Sen | 1
+крайний | extreme | 1
+мера | measure | 1
+контурстрик | Contourstrik | 1
+получай | Get it | 1
+ответ | answer | 1
+крестный | godfather | 1
+аххахсхсхс | Ahhahshshs | 1
+ротом | company | 1
+наркоман | addict | 1
+отвечать | reply | 1
+естец | ec | 1
+анекдот | joke | 1
+ахаахи | Ahaaahi | 1
+смарь | Smart | 1
+зухаззахвзвзз | Zukhazzazhvzz | 1
+fps | fps | 1
+кароч | Karoch | 1
+лиюый | vibrant | 1
+другой | another | 1
+часть | Part | 1
+тест | test | 1
+видеокарта | Video card | 1
+балл | score | 1
+набрать | dial | 1
+уххахахвхвх | Uhhahhvh | 1
+цыганский | Gypsy | 1
+производительность | performance | 1
+кристал | Crystal | 1
+ультр | Ultr | 1
+брат | Brother | 1
+обогревать | heat | 1
+квартира | apartment | 1
+охлад | cool | 1
+критичный | critical | 1
+точнее | more precisely | 1
+выбор | choice | 1
+ххахахахаах | hahahahaha | 1
+попасть | get | 1
+примерно | approximately | 1
+встретиться | Meet | 1
+воскресенск | Voskresensk | 1
+тройка | troika | 1
+доехать | get away | 1
+поймать | catch | 1
+дядя | uncle | 1
+сбагрить | shake off | 1
+ахахаа | ahahaa | 1
+блок | block | 1
+питание | nutrition | 1
+ахахзазахаз | Ahahzazahaz | 1
+голдов | Goldov | 1
+месяц | month | 1
+спех | Speckh | 1
+хотеться | want | 1
+посчитать | count | 1
+сверху | above | 1
+оттого | That's why | 1
+планировать | to plan | 1
+сразу | straightaway | 1
+принцип | principle | 1
+подобрать | Pick up | 1
+наврной | Navalny | 1
+понимать | understand | 1
+короче | Briefly speaking | 1
+дешвать | cheap | 1
+деталь | detail | 1
+вывезти | take out | 1
+просить | ask | 1
+сливать | merge | 1
+авит | Avit | 1
+ебоб | Ebob | 1
+днс | DNS | 1
+ахахаххахпха | Ahahahhahpha | 1
+пол | floor | 1
+выйти | go out | 1
+задача | task | 1
+здача | building | 1
+сдача | change | 1
+з | h | 1
+кринж | Crown | 1
+ахахаххаа | Ahahahahaa | 1
+буит | Buit | 1
+замечательный | wonderful | 1
+даша | Dasha | 1
+вкурс | Fuck | 1
+нормально | Fine | 1
+ебанесть | Fuck | 1
+воскресеньеска | Sunday | 1
+врота | Gate | 1
+грей | Gray | 1
+типо | Tipo | 1
+шаверма | Shaverma | 1
+обед | dinner | 1
+жизнь | life | 1
+попасться | get caught | 1
+довз | DOV | 1
+ааааа | AAAAA | 1
+повезти | get lucky | 1
+секунда | second | 1
+блен | Blen | 1
+режим | mode | 1
+начать | begin | 1
+переходить | cross | 1
+укладываться | File | 1
+дальний | further | 1
+ма | ma | 1
+следующий | next | 1
+разбудить | to wake | 1
+ложиться | go to bed | 1
+рано | early | 1
+никак | no way | 1
+отъезд | departure | 1
+шуметь | make noise | 1
+хвхахаххахахс | Hvhahahahahahs | 1
+увидеться | see | 1
+отъезжать | drive away | 1
+сорить | Fingering | 1
+хоть | though | 1
+выспаться | sleep | 1
+таааак | Taaaak | 1
+конечный | finite | 1
+мск | Moscow time | 1
+раменский | Ramensky | 1
+близко | close | 1
+погодь | Wait | 1
+уезжать | leave | 1
+англа | Anglag | 1
+будто | Like | 1
+устроить | arrange | 1
+ангнуть | Ang | 1
+аременить | Armin | 1
+подумать | Think | 1
+пересадка | transfer | 1
+проестись | Sit | 1
+слушать | listen | 1
+равно | equals | 1
+промежуток | gap | 1
+мама | Mother | 1
+будить | wake up | 1
+сбп | SBP | 1
+налом | cash | 1
+колвый | Sticky | 1
+хахсхсха | Hahshsha | 1
+хош | Hosh | 1
+окэ | OKE | 1
+ахахпххахп | Ahahphahp | 1
+разобраться | figure out | 1
+новуб | Novub | 1
+пугать | frighten | 1
+эээ | uh | 1
+слово | word | 1
+синий | blue | 1
+светить | shine | 1
+причина | cause | 1
+уххахахахахах | Uhhahahahah | 1
+аххахахахахах | ahhahahahah | 1
+стой | Stop | 1
+струя | jet | 1
+программист | programmer | 1
+какбэ | Sakbe | 1
+возврат | return | 1
+вытащить | pull out | 1
+грустный | sad | 1
+придться | Get | 1
+дешвый | cheap | 1
+значит | Means | 1
+чело | brow | 1
+беда | trouble | 1
+фулла | Full | 1
+одинаковый | same | 1
+условие | condition | 1
+достаточно | enough | 1
+неплохо | not bad | 1
+вполне | quite | 1
+бюджетный | Budget | 1
+поколение | generation | 1
+каков | what | 1
+чорт | Chort | 1
+кибербаг | Cyberbag | 1
+запуститься | Start | 1
+сдохнуть | die | 1
+теория | theory | 1
+отнести | Take it | 1
+ремонт | repair | 1
+кроме | except | 1
+отъебнуть | Sweep | 1
+прога | Prog | 1
+поидея | Poles | 1
+высокий | high | 1
+низкий | short | 1
+топовый | Top | 1
+выаозита | Tyaosita | 1
+поэтому | That's why | 1
+переставить | rearrange | 1
+какаять | what | 1
+результат | result | 1
+топ | Top | 1
+среди | among | 1
+разница | difference | 1
+инвестировать | invest | 1
+чонгук | Jungkook | 1
+спатка | Spatka | 1
+вже | Het | 1
+задержать | detain | 1
+успеть | be on time | 1
+рядом | near | 1
+важный | important | 1
+забыть | forget | 1
+положить | put | 1
+часто | often | 1
+ходить | walk | 1
+диаметр | diameter | 1
+частый | frequent | 1
+прикол | joke | 1
+плохо | Badly | 1
+ема | EMA | 1
+голодень | Hunger | 1
+пикник | picnic | 1
+пожалуйста | Please | 1
+место | place | 1
+вс | Sun. | 1
+финишный | finishing | 1
+прямой | straight | 1
+ужс | Uzhs | 1
+платформа | platform | 1
+отсутствие | absence | 1
+увед | Score | 1
+край | Territory | 1
+подойти | come up | 1
+мост | bridge | 1
+зарегиться | Register | 1
+джифорс | Gifors | 1
+драйвер | driver | 1
+обновить | Update | 1
+аххахах | Ahhahah | 1
+почта | mail | 1
+нада | Nada | 1
+скинуть | throw off | 1
+помочь | help | 1
+уебал | Uebal | 1
+мки | MKI | 1
+пятый | fifth | 1
+сосать | suck | 1
+член | member | 1
+под | under | 1
+нагрузка | load | 1
+вырубаться | cut down | 1
+миллионер | millionaire | 1
+звать | call for | 1
+компуткер | computker | 1
+робитать | rob | 1
+казаться | seem | 1
+стим | Steam | 1
+новогодний | New Year | 1
+увидеть | see | 1
+неий | nonsense | 1
+лопата | shovel | 1
+бить | beat | 1
+ахаххахах | Ahahhahah | 1
+батлфилд | Batlefield | 1
+форд | Ford | 1
+тенкс | Tenks | 1
+согласный | consonant | 1
+ворлд | Vorld | 1
+танкс | tanks | 1
+педиков | Pedikov | 1
+хахахахха | Hahahahha | 1
+ясный | clear | 1
+тандер | Tanter | 1
+бесплатный | free | 1
+многопользовательский | Multi -user | 1
+онлайн | Online | 1
+шутереть | Shout | 1
+калибр | caliber | 1
+танда | Tanda | 1
+важно | important | 1
+бэдаарс | Badaars | 1
+китпвп | KITPVP | 1
+дефолтный | default | 1
+какойтый | What | 1
+удалять | delete | 1
+помурчать | Frinking | 1
+чи | Chi | 1
+ак | Ak | 1
+скачивать | Download | 1
+понятно | It's clear | 1
+звук | sound | 1
+подключить | to plug | 1
+потеряться | get lost | 1
+скачиваться | Download | 1
+кончиться | end | 1
+агася | Agasia | 1
+килла | Killa | 1
+гнать | Drive | 1
+лем | Lem | 1
+смысл | meaning | 1
+пошлита | Sending | 1
+танчикосамолетика | tank -samoletics | 1
+виибали | Viibali | 1
+фраг | Frag | 1
+ассистый | Assy | 1
+грудь | breast | 1
+орден | Order | 1
+кадыров | Kadyrov | 1
+ахахахахахахах | Ahahahahahah | 1
+дада | Yes Yes | 1
+ачо | so what | 1
+мёртвый | dead | 1
+отправить | send | 1
+сей | this | 1
+пора | It's time | 1
+тг | tg | 1
+туалет | toilet | 1
+подождать | wait | 1
+хахахахи | hahahahi | 1
+слрить | Slave | 1
+слр | SLR | 1
+пахнуть | smell | 1
+як | Yak | 1
+ъоетлый | Knight | 1
+fuf | Fuf | 1
+нуго | nigo | 1
+дсик | disk | 1
+учиться | study | 1
+решить | decide | 1
+слава | glory | 1
+эээээ | Eeeee | 1
+спасть | Save | 1
+поесть | Eat | 1
+ёлка | Christmas tree | 1
+ночью | at night | 1
+дурак | fool | 1
+уметь | be able to | 1
+ахаххахсхсха | Ahahhakhshsha | 1
+кухня | kitchen | 1
+печенька | cookie | 1
+падло | Pado | 1
+ной | Noah | 1
+тефтель | Tefel | 1
+встать | get up | 1
+мягенький | soft | 1
+тёпленький | Warm | 1
+направиться | Go | 1
+еда | food | 1
+наш | our | 1
+пространство | space | 1
+вода | water | 1
+ролл | Roll | 1
+слизь | slime | 1
+полюбома | to love | 1
+никто | nobody | 1
+почемуть | why | 1
+инвалид | disabled person | 1
+сервер | server | 1
+мел | chalk | 1
+коготь | claw | 1
+шляпа | hat | 1
+пачимуть | Pachimut | 1
+бинго | bingo | 1
+пошлый | vulgar | 1
+аэаххах | AEAHHAH | 1
+кошелёк | wallet | 1
+отец | father | 1
+подмосковье | Moscow Region | 1
+шлюха | whore | 1
+столовая | dining room | 1
+вмера | Palf | 1
+кудато | somewhere | 1
+хоокей | hockey | 1
+оокей | Ooky | 1
+зарядка | charger | 1
+перед | before | 1
+сон | dream | 1
+каковата | how to | 1
+конец | end | 1
+вставить | insert | 1
+хаб | hub | 1
+хвхахахвхах | hvhahvhah | 1
+ночь | night | 1
+умереть | die | 1
+анрил | Anryl | 1
+ахаххахахахах | ahahahahahah | 1
+погнать | Drive | 1
+алоо | Hello | 1
+срало | Sharp | 1
+доигрывать | Digger | 1
+покой | peace | 1
+понил | Safe | 1
+майнкрафт | Minecraft | 1
+похвастаться | boast of | 1
+тем | those | 1
+компуктёр | compounder | 1
+вентилятор | fan | 1
+контур | circuit | 1
+стрик | Strik | 1
+отдохнуть | relax | 1
+блять | Fuck | 1
+сор | sor | 1
+заигнорил | Sunnered | 1
+чуткий | sensitive | 1
+пойдть | Come | 1
+питаться | Eat | 1
+e | e | 1
+v | V | 1
+звучать | sound | 1
+проец | Protz | 1
+собирать | gather | 1
+халява | freebie | 1
+подогнать | fit | 1
+слабый | weak | 1
+сожаление | regret | 1
+сойти | go away | 1
+сборка | assembly | 1
+жэсть | tin | 1
+сток | Stock | 1
+сан | San | 1
+зе | Ze | 1
+форест | Forest | 1
+внизу | at the bottom | 1
+улица | Street | 1
+штол | Stol | 1
+почти | almost | 1
+личный | private | 1
+получаетс | Get | 1
+родитель | parent | 1
+ищо | Ishcho | 1
+ды | so | 1
+миллион | million | 1
+машина | car | 1
+подарить | give | 1
+чесслово | Chesuslovo | 1
+узнать | to know | 1
+слот | Slot | 1
+цвет | color | 1
+тмного | camous | 1
+негр | black person | 1
+пригодиться | come in handy | 1
+сигма | sigma | 1
+раскачсить | swing | 1
+xtuj | what | 1
+lfdfq | LFDFQ | 1
+раскачаться | Swing | 1
+мат | mat | 1
+тинькоф | Tinkoff | 1
+кешбек | Keshbek | 1
+итого | Total | 1
+ама | Ama | 1
+сокет | SOCKET | 1
+материнский | maternal | 1
+класть | Put | 1
+видевокака | Vidivokoka | 1
+мелить | Miss | 1
+будущее | future | 1
+проца | Hold | 1
+целое | whole | 1
+аэаххахс | AEAHHAHS | 1
+хахахахааахха | hahahahahaha | 1
+условно | conditionally | 1
+конченый | finished | 1
+план | plan | 1
+подождт | Probably | 1
+нормальный | normal | 1
+ахахахи | Ahahahi | 1
+ааххахахах | Aahhahah | 1
+эщкер | Escher | 1
+ооооо | OOOOO | 1
+ахахха | Ahahha | 1
