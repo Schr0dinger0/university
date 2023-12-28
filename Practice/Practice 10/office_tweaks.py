@@ -320,7 +320,6 @@ def main():
                             selected_files = [file for file in filtered_files if values_files[file]]
                             delete_files(selected_files)
                             window_files.close()
-
                     # Закрытие окна выбора файлов для удаления
 
             window_criteria.close()
