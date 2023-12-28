@@ -1,239 +1,329 @@
 import os
 import PySimpleGUI as sg
-from pdf2docx import Converter
-from docx2pdf import convert
+from pdf2docx import Converter as PDFConverter
+from docx2pdf import convert as docx_to_pdf_convert
 from PIL import Image
 
-def main_window():
+def change_working_directory(new_directory):
+    try:
+        os.chdir(new_directory)
+        return True
+    except FileNotFoundError:
+        sg.popup_error("Раздел не найден.")
+    except OSError as e:
+        sg.popup_error(f"Произошла ошибка при смене рабочего каталога: {e}")
+    return False
+
+def confirm_directory_change(new_directory):
     layout = [
-        [sg.Text("Добро пожаловать в Office Tweaks!", font=("Helvetica", 16))],
-        [sg.Button("Сменить рабочий каталог", size=(30, 2), font=("Helvetica", 12))],
-        [sg.Button("Преобразовать PDF в Docx", size=(30, 2), font=("Helvetica", 12))],
-        [sg.Button("Преобразовать Docx в PDF", size=(30, 2), font=("Helvetica", 12))],
-        [sg.Button("Произвести сжатие изображений", size=(30, 2), font=("Helvetica", 12))],
-        [sg.Button("Удалить группу файлов", size=(30, 2), font=("Helvetica", 12))],
-        [sg.Button("Выход", size=(30, 2), font=("Helvetica", 12))]
+        [sg.Text(f"Новый рабочий каталог: {new_directory}")],
+        [sg.Button("Подтвердить"), sg.Button("Отмена")]
     ]
 
-    return sg.Window("Office Tweaks", layout, element_justification="center", margins=(20, 20))
-
-def change_working_directory():
-    layout = [
-        [sg.Text("Введите путь к новому рабочему каталогу:")],
-        [sg.InputText(key="directory_input", enable_events=True, default_text=os.getcwd()), sg.FolderBrowse()],
-        [sg.Button("OK"), sg.Button("Отмена")]
-    ]
-
-    window = sg.Window("Сменить рабочий каталог", layout)
+    window = sg.Window("Подтверждение смены каталога", layout, modal=True)
 
     while True:
         event, values = window.read()
 
-        if event == sg.WIN_CLOSED or event == "Отмена":
-            new_directory = None
-            break
-        elif event == "OK":
-            new_directory = values["directory_input"]
-            break
+        if event == sg.WINDOW_CLOSED or event == 'Отмена':
+            window.close()
+            return False
 
-    window.close()
-    return new_directory
+        if event == 'Подтвердить':
+            window.close()
+            return True
 
-def pdf_to_docx(pdf_path):
-    pdf_path_str = pdf_path.name if isinstance(pdf_path, type(os.path)) else pdf_path
-    docx_path = os.path.splitext(pdf_path_str)[0] + ".docx"
+def pdf_to_docx(pdf_file):
+    docx_file = os.path.splitext(pdf_file)[0] + ".docx"
 
-    cv = Converter(pdf_path_str)
-    cv.convert(docx_path, start=0, end=None)
-    cv.close()
+    pdf_converter = PDFConverter(pdf_file)
+    pdf_converter.convert(docx_file)
+    pdf_converter.close()
 
-    return docx_path
+    sg.popup(f"Преобразование завершено. Результат: {docx_file}")
 
-def docx_to_pdf(docx_path):
-    pdf_path = os.path.splitext(docx_path)[0] + ".pdf"
-    convert(docx_path, pdf_path)
-    return pdf_path
+def docx_to_pdf(docx_file):
+    pdf_file = os.path.splitext(docx_file)[0] + ".pdf"
 
-def compress_images(directory, quality, selected_images):
-    image_types = [".png", ".jpg", ".jpeg"]
+    docx_to_pdf_convert(docx_file, pdf_file)
 
-    for root, dirs, files in os.walk(directory):
-        for file in files:
-            if any(file.lower().endswith(img_type) for img_type in image_types) and (not selected_images or file in selected_images):
-                image_path = os.path.join(root, file)
-                compressed_image_path = os.path.splitext(image_path)[0] + "_compressed.jpg"
+    sg.popup(f"Преобразование завершено. Результат: {pdf_file}")
 
-                with Image.open(image_path) as img:
-                    img.save(compressed_image_path, "JPEG", quality=quality)
+def compress_image(image_file, compression_percentage):
+    image = Image.open(image_file)
+    compressed_image_file = f"compressed_{compression_percentage}_{os.path.basename(image_file)}"
 
-    sg.popup(f"Сжатие завершено. Сжатые изображения сохранены в {directory}")
+    # Сжимаем изображение с оптимизацией для формата JPEG
+    compressed_image_file_path = os.path.join(os.getcwd(), compressed_image_file)
+    image.save(compressed_image_file_path, optimize=True, quality=compression_percentage)
+
+    sg.popup(f"Сжатие завершено. Результат: {compressed_image_file_path}")
+
+def delete_files(files_to_delete):
+    current_directory = os.getcwd()  # Получаем текущую директорию
+
+    # Окно для подтверждения удаления файлов
+    confirm_layout = [
+        [sg.Text(f"Будут удалены следующие файлы:")],
+        *[[sg.Text(file)] for file in files_to_delete],
+        [sg.Text("Вы уверены, что хотите удалить эти файлы?")],
+        [sg.Button('Да'), sg.Button('Нет')]
+    ]
+
+    confirm_window = sg.Window('Подтверждение удаления файлов', confirm_layout)
+
+    event, _ = confirm_window.read()
+
+    # Обработка событий окна подтверждения удаления файлов
+    if event == 'Да':
+        for file_to_delete in files_to_delete:
+            try:
+                os.remove(os.path.join(current_directory, file_to_delete))
+            except Exception as e:
+                sg.popup_error(f"Ошибка при удалении файла {file_to_delete}: {e}")
+
+        sg.popup("Удаление завершено.")
+
+    confirm_window.close()
+
+def convert_selected_files(files, conversion_function):
+    for file in files:
+        try:
+            conversion_function(file)
+        except Exception as e:
+            sg.popup_error(f"Ошибка при конвертации файла {file}: {e}")
 
 
-def delete_files(directory, filter_option=None, substring=None):
-    deleted_files = []
+def generate_tree_structure(path):
+    folders = os.path.normpath(path).split(os.sep)
+    structure = ""
+    for folder in folders[:-1]:
+        structure += f"{folder} {os.sep}\n"
+    structure += folders[-1]
+    return structure
 
-    try:
-        # Получаем все файлы в директории
-        all_files = [os.path.join(root, file) for root, dirs, files in os.walk(directory) for file in files]
-
-
-        # Используем словарь для соответствия методу удаления и соответствующей операции
-        filter_options = {
-            '1': lambda x: os.path.basename(x).startswith(substring),
-            '2': lambda x: os.path.basename(x).endswith(substring),
-            '3': lambda x: substring.lower() in os.path.basename(x).lower(),
-            '4': lambda x: os.path.splitext(x)[1].lower() in {".png", ".jpg", ".jpeg"}
-        }
-
-
-        if all_files:
-
-            # Фильтруем файлы согласно выбранным требованиям
-            filtered_files = [file_path for file_path in all_files if filter_options.get(filter_option, lambda x: False)(file_path)]
-            for file_path in all_files:
-                comparison_result = filter_options.get(filter_option, lambda x: False)(file_path)
-                print(
-                    f"Проверка файла: {file_path}, Результат: {comparison_result}, Сравнение: {substring.lower()} in {os.path.basename(file_path).lower()} or {substring.lower()} in {os.path.splitext(os.path.basename(file_path))[0].lower()} or {substring.lower()} in {os.path.splitext(os.path.basename(file_path))[1].lower()}")
-
-            if filtered_files:
-                print(f"Выбранный метод: {filter_option}")
-                print(f"Выбранная подстрока: {substring}")
-                print(f"Файлы, удовлетворяющие критериям: {filtered_files}")
-
-                for file_path in filtered_files:
-                    try:
-                        if os.path.isfile(file_path):
-                            os.remove(file_path)
-                        elif os.path.isdir(file_path):
-                            os.rmdir(file_path)
-                        deleted_files.append(file_path)
-                    except Exception as e:
-                        sg.popup_error(f"Ошибка при удалении файла {file_path}: {e}")
-
-                sg.popup(f"Удаление завершено. Удалены следующие файлы:\n\n{', '.join(deleted_files)}")
-            else:
-                sg.popup("Нет файлов, удовлетворяющих выбранным критериям.")
-        else:
-            sg.popup("В выбранной директории нет файлов для удаления.")
-    except Exception as e:
-        sg.popup_error(f"Ошибка: {e}")
-
+def get_selected_option(values):
+    # Поиск выбранного варианта
+    for option in ['option1', 'option2', 'option3', 'option4']:
+        if values[option]:
+            return int(option[-1])  # Получение числа из ключа 'optionX'
 
 def main():
-    window = main_window()
-    current_directory = os.getcwd()  # Установим рабочий каталог по умолчанию
+    sg.theme('DarkAmber')
+    tree_button_style = {'size': (30, 8), 'key': '-TREE-', 'enable_events': True, 'font': ('Helvetica', 12)}
+    action_button_style = {'size': (30, 1), 'font': ('Helvetica', 12)}
+    text_style = {'font': ('Helvetica', 12)}
+
+    layout = [
+        [sg.Button(generate_tree_structure(os.getcwd()), **tree_button_style)],
+        [sg.Button("Преобразовать PDF в Docx", **action_button_style)],
+        [sg.Button("Преобразовать Docx в PDF", **action_button_style)],
+        [sg.Button("Произвести сжатие изображений", **action_button_style)],
+        [sg.Button("Удалить группу файлов", **action_button_style)],
+        [sg.Exit(size=(30, 1), font=('Helvetica', 12))]
+    ]
+
+    window = sg.Window("Office Tweaks", layout, resizable=False, size=(310, 390), font=('Helvetica', 12), finalize=True)
+    window.set_min_size((310, 390))
 
     while True:
         event, values = window.read()
 
-        if event == sg.WIN_CLOSED or event == "Выход":
+        if event == sg.WINDOW_CLOSED or event == 'Exit':
             break
-        elif event == "Сменить рабочий каталог":
-            new_directory = change_working_directory()
 
-            if new_directory:
-                current_directory = new_directory
-                sg.popup(f"Рабочий каталог изменен на {current_directory}")
+        if event == '-TREE-':
+            new_directory = sg.popup_get_folder("Выберите новый рабочий каталог:")
+            if new_directory and change_working_directory(new_directory):
+                if confirm_directory_change(new_directory):
+                    window['-TREE-'].update(generate_tree_structure(new_directory))
 
-        elif event == "Преобразовать PDF в Docx":
-            pdf_path = sg.popup_get_file("Выберите PDF-файл для преобразования в Docx:", no_window=True)
 
-            if pdf_path:
-                docx_path = pdf_to_docx(pdf_path)
-                sg.popup(f"Преобразование завершено. Результат сохранен в {docx_path}")
-            else:
-                sg.popup("Выбор отменен.")
 
-        elif event == "Преобразовать Docx в PDF":
-            docx_path = sg.popup_get_file("Выберите Docx-файл для преобразования в PDF:", no_window=True)
 
-            if docx_path:
-                pdf_path = docx_to_pdf(docx_path)
-                sg.popup(f"Преобразование завершено. Результат сохранен в {pdf_path}")
-            else:
-                sg.popup("Выбор отменен.")
+        elif event == 'Преобразовать PDF в Docx':
 
-        elif event == "Произвести сжатие изображений":
-            if current_directory:
-                layout_compression = [
-                    [sg.Text("Выберите изображения для сжатия:")],
-                    [sg.Listbox(values=[file for file in os.listdir(current_directory) if file.lower().endswith((".png", ".jpg", ".jpeg"))], key="selected_images", select_mode=sg.LISTBOX_SELECT_MODE_EXTENDED, size=(40, 10))],
-                    [sg.Text("Выберите процент сжатия (1-85%):")],
-                    [sg.Slider(range=(1, 85), orientation="h", size=(30, 15), default_value=85, key="compression_slider")],
-                    [sg.Button("OK"), sg.Button("Отмена")]
-                ]
+            pdf_files = [f for f in os.listdir() if f.lower().endswith(".pdf")]
 
-                window_compression = sg.Window("Сжатие изображений", layout_compression)
+            layout_conversion = [
 
-                while True:
-                    event_compression, values_compression = window_compression.read()
+                [sg.Text("Выберите файлы для конвертации:")],
 
-                    if event_compression == sg.WIN_CLOSED or event_compression == "Отмена":
-                        quality = None
-                        selected_images = None
-                        break
-                    elif event_compression == "OK":
-                        quality = int(values_compression["compression_slider"])
-                        selected_images = values_compression["selected_images"]
-                        break
+                *[[sg.Checkbox(file, key=file)] for file in pdf_files],
 
-                window_compression.close()
+                [sg.Button("Конвертировать"), sg.Button("Отмена")]
 
-                if quality is not None:
-                    compress_images(current_directory, quality, selected_images)
-            else:
-                sg.popup("Выберите рабочий каталог перед сжатием изображений.")
+            ]
 
-        elif event == "Удалить группу файлов":
-            if current_directory:
-                filter_option = None
+            window_conversion = sg.Window("Выбор файлов для конвертации", layout_conversion)
 
-                layout_filter = [
-                    [sg.Text("Выберите метод удаления:")],
-                    [sg.Radio("Начинаются на подстроку", "deletion_method", default=True, key="deletion_method_startswith")],
-                    [sg.Radio("Заканчиваются на подстроку", "deletion_method", key="deletion_method_endswith")],
-                    [sg.Radio("Содержат подстроку", "deletion_method", key="deletion_method_contains")],
-                    [sg.Radio("По расширению", "deletion_method", key="deletion_method_by_extension")],
-                    [sg.Button("Далее"), sg.Button("Отмена")]
-                ]
+            while True:
 
-                window_filter = sg.Window("Выбор метода удаления", layout_filter)
+                event_conversion, values_conversion = window_conversion.read()
 
-                while True:
-                    event_filter, values_filter = window_filter.read()
+                if event_conversion in (sg.WIN_CLOSED, "Отмена"):
 
-                    if event_filter == sg.WIN_CLOSED or event_filter == "Отмена":
-                        break
-                    elif event_filter == "Далее":
-                        filter_option = next(key for key, value in values_filter.items() if value) if any(values_filter.values()) else None
-                        break
+                    break
 
-                window_filter.close()
+                elif event_conversion == "Конвертировать":
 
-                if filter_option is not None:
-                    layout_substring = [
-                        [sg.Text("Введите подстроку для фильтра:")],
-                        [sg.InputText(key="deletion_substring")],
-                        [sg.Button("OK"), sg.Button("Отмена")]
+                    selected_files = [file for file in pdf_files if values_conversion[file]]
+
+                    convert_selected_files(selected_files, pdf_to_docx)
+
+            window_conversion.close()
+
+
+        elif event == 'Преобразовать Docx в PDF':
+
+            docx_files = [f for f in os.listdir() if f.lower().endswith(".docx")]
+
+            layout_conversion = [
+
+                [sg.Text("Выберите файлы для конвертации:")],
+
+                *[[sg.Checkbox(file, key=file)] for file in docx_files],
+
+                [sg.Button("Конвертировать"), sg.Button("Отмена")]
+
+            ]
+
+            window_conversion = sg.Window("Выбор файлов для конвертации", layout_conversion)
+
+            while True:
+
+                event_conversion, values_conversion = window_conversion.read()
+
+                if event_conversion in (sg.WIN_CLOSED, "Отмена"):
+
+                    break
+
+                elif event_conversion == "Конвертировать":
+
+                    selected_files = [file for file in docx_files if values_conversion[file]]
+
+                    convert_selected_files(selected_files, docx_to_pdf)
+
+            window_conversion.close()
+
+
+
+        elif event == 'Произвести сжатие изображений':
+
+            image_files = [f for f in os.listdir() if f.lower().endswith((".png", ".jpg", ".jpeg"))]
+
+            layout_conversion = [
+
+                [sg.Text("Выберите изображения для сжатия:")],
+
+                *[[sg.Checkbox(file, key=file)] for file in image_files],
+
+                [sg.Text("Процент сжатия:"),
+                 sg.Slider(range=(1, 85), orientation="h", default_value=50, size=(20, 15), key="compression_slider")],
+
+                [sg.Button("Сжать изображения"), sg.Button("Отмена")]
+
+            ]
+
+            window_conversion = sg.Window("Выбор изображений для сжатия", layout_conversion)
+
+            while True:
+
+                event_conversion, values_conversion = window_conversion.read()
+
+                if event_conversion in (sg.WIN_CLOSED, "Отмена"):
+
+                    break
+
+                elif event_conversion == "Сжать изображения":
+
+                    selected_files = [file for file in image_files if values_conversion[file]]
+
+                    compression_percentage = int(values_conversion["compression_slider"])
+
+                    for selected_file in selected_files:
+                        compress_image(selected_file, compression_percentage)
+
+            window_conversion.close()
+
+        elif event == 'Удалить группу файлов':
+            # Окно для выбора метода удаления и ввода подстроки
+            layout_criteria = [
+                [sg.Text("Выберите критерий удаления:")],
+                [sg.Radio('1. Удалить все файлы начинающиеся на определенную подстроку', group_id='group1',
+                          key='option1')],
+                [sg.Radio('2. Удалить все файлы заканчивающиеся на определенную подстроку', group_id='group1',
+                          key='option2')],
+                [sg.Radio('3. Удалить все файлы содержащие определенную подстроку', group_id='group1', key='option3')],
+                [sg.Radio('4. Удалить все файлы по расширению', group_id='group1', key='option4')],
+                [sg.Text("Введите подстроку:"), sg.InputText(key='substring')],
+                [sg.Button('OK'), sg.Button('Отмена')]
+            ]
+
+            # Создание окна выбора метода удаления и ввода подстроки
+            window_criteria = sg.Window('Выбор метода удаления и ввода подстроки', layout_criteria)
+
+            action = None
+            substring = None
+
+            # Основной цикл обработки событий для окна выбора метода удаления и ввода подстроки
+            while True:
+                event_criteria, values_criteria = window_criteria.read()
+
+                # Обработка событий окна выбора метода удаления и ввода подстроки
+                if event_criteria in (sg.WINDOW_CLOSED, 'Отмена'):
+                    break
+                elif event_criteria == 'OK':
+                    action = int([k for k, v in values_criteria.items() if v][0][-1])
+                    substring = values_criteria['substring']
+                    if not substring:
+                        sg.popup_error("Неверный ввод. Пожалуйста, введите подстроку.")
+                        continue
+
+                    # Закрытие окна выбора метода удаления и ввода подстроки
+                    window_criteria.close()
+
+                    # Получение списка файлов для выбора
+                    files = [f for f in os.listdir() if os.path.isfile(f)]
+
+                    # Фильтрация файлов по критериям
+                    filtered_files = []
+                    for file in files:
+                        if action == 1 and file.startswith(substring):
+                            filtered_files.append(file)
+                        elif action == 2 and file.endswith(substring):
+                            filtered_files.append(file)
+                        elif action == 3 and substring in file:
+                            filtered_files.append(file)
+                        elif action == 4 and file.endswith(substring):
+                            filtered_files.append(file)
+
+                    # Окно для выбора файлов для удаления
+                    layout_files = [
+                        [sg.Text(
+                            f'Выберите файлы для удаления:')],
+                        *[[sg.Checkbox(file, key=file)] for file in filtered_files],
+                        [sg.Button('Удалить выбранные файлы'), sg.Button('Отмена')]
                     ]
 
-                    window_substring = sg.Window("Ввод подстроки для фильтра", layout_substring)
+                    # Создание окна выбора файлов для удаления
+                    window_files = sg.Window('Выбор файлов для удаления', layout_files)
 
+                    # Основной цикл обработки событий для окна выбора файлов для удаления
                     while True:
-                        event_substring, values_substring = window_substring.read()
+                        event_files, values_files = window_files.read()
 
-                        if event_substring == sg.WIN_CLOSED or event_substring == "Отмена":
+                        # Обработка событий окна выбора файлов для удаления
+                        if event_files in (sg.WINDOW_CLOSED, 'Отмена'):
                             break
-                        elif event_substring == "OK":
-                            substring = values_substring["deletion_substring"]
-                            break
+                        elif event_files == 'Удалить выбранные файлы':
+                            selected_files = [file for file in filtered_files if values_files[file]]
+                            delete_files(selected_files)
+                            window_files.close()
 
-                    window_substring.close()
+                    # Закрытие окна выбора файлов для удаления
 
-                    if substring is not None:
-                        delete_files(current_directory, filter_option, substring)
-            else:
-                sg.popup("Выберите рабочий каталог перед удалением группы файлов.")
+            window_criteria.close()
 
     window.close()
 
